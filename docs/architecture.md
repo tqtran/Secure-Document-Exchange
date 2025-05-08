@@ -13,11 +13,12 @@ Imagine a bank where you want to store a confidential document in a deposit box 
 7. That key is then used to unlock the storage bin and retrieve the file.
 8. All keys and boxes are destroyed after two days, used or not.
 
-This ensures the bank cannot tamper with your contents, doesn’t know which bin is yours, and can’t access or modify the file without the exact chain of keys provided by the sender.
+This process ensures that the bank does not possess all the keys needed to access your private deposit. The bank cannot see what's inside the storage bin, doesn't know which bin is yours, and cannot tamper with the contents. At the same time, the chain of keys and containers also protects the bank, ensuring that only someone possessing the correct key and matching identifiers can access a given box. This prevents accidental or malicious access to someone else’s deposit. Everything self-destructs after two days, so nothing remains accessible beyond the intended window.
+
 ---
 ## Cryptographic Foundation: Symmetric Encryption
 
-This system is built entirely on symmetric encryption, specifically AES-256. The same key is used for both encryption and decryption, and no public-private key infrastructure is required.
+This system is built entirely on symmetric encryption, specifically AES-256. The same key is used for encryption and decryption; no public-private key infrastructure is required.
 
 ### Benefits
 
@@ -47,7 +48,7 @@ This architecture mitigates these tradeoffs by layering encryption, separating c
 ### 2. Delivery to the Recipient
 
 - `SESSION_ID` is created from `SERVER_KEY_ID` + `SESSION_DECRYPTION_KEY` (user-held).
-- An image-based code is generated when the recipient opens the email, and this action triggers session creation.
+- An image-based code is generated when the recipient opens the email, triggering session creation.
 - The email contains the image and access link to the retrieval portal.
 
 ### 3. Retrieval and Validation
