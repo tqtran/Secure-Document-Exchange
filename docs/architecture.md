@@ -14,7 +14,26 @@ Imagine a bank where you want to store a confidential document in a deposit box 
 8. All keys and boxes are destroyed after two days, used or not.
 
 This ensures the bank cannot tamper with your contents, doesn’t know which bin is yours, and can’t access or modify the file without the exact chain of keys provided by the sender.
+---
+## Cryptographic Foundation: Symmetric Encryption
 
+This system is built entirely on symmetric encryption, specifically AES-256. The same key is used for both encryption and decryption, and no public-private key infrastructure is required.
+
+### Benefits
+
+- **Performance**: AES-256 is fast and efficient, suitable for encrypting large files.
+- **Simplicity**: The design avoids the complexity of keypair management or certificates.
+- **Security**: AES is a well-vetted algorithm that is supported across all major platforms.
+- **No reliance on PKI**: Eliminates the need for external key authorities or verification chains.
+
+### Tradeoffs
+
+- **Key exchange is critical**: Secure delivery of the session decryption key is essential to system security.
+- **No built-in identity assurance**: Unlike asymmetric cryptography, symmetric encryption cannot prove who encrypted the content.
+- **No forward secrecy**: If a symmetric key is compromised, all data it protects can be decrypted.
+- **Single-recipient design**: Sharing the file with multiple users requires sharing or duplicating the key.
+
+This architecture mitigates these tradeoffs by layering encryption, separating control of keys, and applying OTP validation to limit exposure.
 ---
 
 ## Technical Architecture Overview
