@@ -35,8 +35,8 @@ This system is built entirely on symmetric encryption, specifically AES-256. The
 - **Single-recipient design**: Sharing the file with multiple users requires sharing or duplicating the key.
 
 This architecture mitigates these tradeoffs by layering encryption, separating control of keys, and applying OTP validation to limit exposure.
----
 
+---
 ## Technical Architecture Overview
 
 ### 1. Encryption and Storage
