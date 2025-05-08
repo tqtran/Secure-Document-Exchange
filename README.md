@@ -8,13 +8,13 @@ This project implements a secure, zero-knowledge document exchange protocol that
 - Session-based decryption using split-key delivery
 - Image-based session initialization and access token
 - OTP validation to prevent link forwarding and reuse
-- Fully ephemeral: auto-purges after 2 calendar days
+- Fully ephemeral: auto-purges after two calendar days
 - No server-held logs or long-term key material
 - Resistant to phishing, brute-force, and replay attacks
 
 ## 📦 How It Works (Quick Summary)
 
-1. The sender uploads a file, which is encrypted using a unique key.
+1. The sender uploads a file encrypted using a unique key.
 2. The server encrypts the decryption key and package reference using a temporary server key.
 3. That temporary key is then encrypted using a session decryption key, and only the client holds the full path to recovery.
 4. When the recipient opens the email, an image is loaded that generates a session token on the server.
