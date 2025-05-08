@@ -3,7 +3,7 @@
 This project implements a secure, zero-knowledge document exchange protocol that ensures files can only be accessed by intended recipients — not by the server or attackers with partial access. It is designed to be implementation-agnostic, privacy-preserving, and cryptographically robust.
 
 ## 🔐 Key Features
-
+- Pure AES-256 symmetric encryption — no keypair or PKI dependency
 - AES-256 per-file encryption
 - Session-based decryption using split-key delivery
 - Image-based session initialization and access token
