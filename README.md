@@ -21,9 +21,11 @@ This project implements a secure, zero-knowledge document exchange protocol that
 5. The recipient then visits the portal, enters the image-based code, and retrieves the encrypted package.
 6. The server decrypts the key layers only when all components are provided.
 
-## 🧾 Documentation
+## 📄 Documentation
 
-For a full technical breakdown, see [docs/architecture.md](docs/architecture.md).
+- [Architecture Overview](docs/architecture.md)
+- [Security and Risk Analysis](docs/security.md)
+- [Frequently Asked Questions](docs/faq.md)
 
 Includes:
 - Non-technical analogy
